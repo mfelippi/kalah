@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
+// Since the applicatino runs on H2, there is no need for a test context to a mocked database.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GameControllerTest {

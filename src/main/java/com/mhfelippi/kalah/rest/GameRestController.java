@@ -1,26 +1,13 @@
 package com.mhfelippi.kalah.rest;
 
-import antlr.collections.impl.IntRange;
 import com.mhfelippi.kalah.controller.GameController;
-import com.mhfelippi.kalah.entity.Board;
 import com.mhfelippi.kalah.entity.Game;
-import com.mhfelippi.kalah.repository.GameRepository;
 import com.mhfelippi.kalah.rest.pojo.GameStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/games")
