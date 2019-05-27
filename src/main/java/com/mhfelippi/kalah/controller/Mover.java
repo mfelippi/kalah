@@ -1,6 +1,5 @@
 package com.mhfelippi.kalah.controller;
 
-import com.mhfelippi.kalah.controller.exception.EmptyPitException;
 import com.mhfelippi.kalah.controller.exception.PitException;
 import com.mhfelippi.kalah.entity.Board;
 import com.mhfelippi.kalah.entity.Game;

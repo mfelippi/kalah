@@ -1,6 +1,6 @@
 package com.mhfelippi.kalah.controller;
 
-import com.mhfelippi.kalah.controller.exception.EmptyPitException;
+import com.mhfelippi.kalah.controller.exception.PitException;
 import com.mhfelippi.kalah.entity.Game;
 import com.mhfelippi.kalah.entity.Player;
 import org.junit.Test;
@@ -71,7 +71,7 @@ public class MoverTest {
         assertEquals(Player.PLAYER_1, game.getTurn());
     }
 
-    @Test(expected = EmptyPitException.class)
+    @Test(expected = PitException.class)
     public void moveWithoutStones() {
         Game game = new Game();
         game.getPlayer1().setNumberOfStones(0, 0);
@@ -79,7 +79,7 @@ public class MoverTest {
         new Mover(game).move(0);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = PitException.class)
     public void moveInvalid() {
         Game game = new Game();
 
