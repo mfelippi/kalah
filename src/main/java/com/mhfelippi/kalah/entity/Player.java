@@ -14,8 +14,7 @@ public enum Player {
         }
     }
 
-    @Override
-    public String toString() {
+    public String getName() {
         switch (this) {
             case PLAYER_1:
                 return "Player 1";
@@ -24,4 +23,5 @@ public enum Player {
         }
         throw new RuntimeException();
     }
+
 }

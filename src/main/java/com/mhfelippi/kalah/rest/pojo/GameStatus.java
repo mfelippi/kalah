@@ -2,6 +2,7 @@ package com.mhfelippi.kalah.rest.pojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mhfelippi.kalah.entity.Game;
+import com.mhfelippi.kalah.entity.Player;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.Arrays;
@@ -16,6 +17,7 @@ public class GameStatus {
     private Long id;
     private String uri;
     private Map<String, String> status;
+    private Player nextTurn;
 
     public GameStatus(Long gameId) {
         this.id = gameId;
@@ -29,6 +31,7 @@ public class GameStatus {
         pits.addAll(Arrays.stream(game.getPlayer2().getPits()).boxed().map(i -> i.toString()).collect(Collectors.toList()));
 
         this.status = IntStream.rangeClosed(1, pits.size()).boxed().collect(Collectors.toMap(i -> i.toString(), i -> pits.get(i-1)));
+        this.nextTurn = game.getTurn();
     }
 
     public Long getId() {
@@ -41,5 +44,9 @@ public class GameStatus {
 
     public Map<String, String> getStatus() {
         return status;
+    }
+
+    public Player getNextTurn() {
+        return nextTurn;
     }
 }

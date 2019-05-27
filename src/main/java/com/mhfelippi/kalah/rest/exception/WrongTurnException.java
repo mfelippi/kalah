@@ -21,6 +21,6 @@ public class WrongTurnException extends GameException {
 
     @Override
     public String getMessage() {
-        return "Expected "+ turn + " to play next.";
+        return "Expected "+ turn.getName() + " to play next.";
     }
 }
